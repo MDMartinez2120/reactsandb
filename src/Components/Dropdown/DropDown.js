@@ -3,28 +3,36 @@ import "../Dropdown/DropDown.css";
 import Select from 'react-select';
 
 const DropDown = () => {
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-    ];
+    const options = ["Italy", "Spain", "Greece"];
 
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selected, setSelected] = useState(options[0]);
 
     return (
-    <div className="search">
-        <div className="search-bar">
-            <Select
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
-                options={options}
-            />
-        </div>
-    </div>
+        <form>
+            <select
+                value = {selected}
+                onChange={e => setSelected(e.target.value)}>
+                {options.map((value) => (
+                    <option value={value} key={value}>
+                        {value}
+                    </option>
+                ))}
+            </select>
+        </form>
   );
 }
 
 export default DropDown;
+
+// <div className="search">
+//     <div className="search-bar">
+//         <Select
+//             defaultValue={selectedOption}
+//             onChange={setSelectedOption}
+//             options={options}
+//         />
+//     </div>
+// </div>
 
 // {/*<input*/}
 // {/*  className="search"*/}
