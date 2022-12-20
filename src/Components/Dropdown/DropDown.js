@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import "../Dropdown/DropDown.css";
 import Select from 'react-select';
+import {users} from '../users';
 
 const DropDown = () => {
-
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-        { value: 'rocky road', label: 'Rocky Road' },
-        { value: 'espresso', label: 'Espresso' },
-        { value: 'pistachio', label: 'Pistachio' },
-    ];
-
-    const [selectedOption, setSelectedOption] = useState(null);
+    // const options = [
+    //     { value: 'chocolate', label: 'Chocolate' },
+    //     { value: 'strawberry', label: 'Strawberry' },
+    //     { value: 'vanilla', label: 'Vanilla' },
+    //     { value: 'rocky road', label: 'Rocky Road' },
+    //     { value: 'espresso', label: 'Espresso' },
+    //     { value: 'pistachio', label: 'Pistachio' },
+    // ];
+    const [search, setSearch] = useState('');
 
     return (
         <div className="search-bar">
-            <Select
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
-                options={options}
-            />
+            <input type='text' placeholder='search...' className='search' onChange={e => setSearch(e.target.value)}/>
+            <ul className='list'>
+                {users.filter(user => user.first_name.toLowerCase().includes(search)).map((user) => (
+                    <li key={user.id} className='list-item'>{user.first_name}</li>
+                ))}
+            </ul>
         </div>
   );
 }
@@ -67,3 +67,9 @@ export default DropDown;
 //         ))}
 //     </select>
 // </form>
+
+// {/*<Select*/}
+// {/*    defaultValue={selectedOption}*/}
+// {/*    onChange={setSelectedOption}*/}
+// {/*    options={options}*/}
+// {/*/>*/}
