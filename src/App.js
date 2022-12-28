@@ -5,6 +5,7 @@ import DataTable from "./Components/DataTable/DataTable";
 import {Users} from "./Components/Users";
 import DropDown2 from "./Components/Dropdown/DropDown2";
 import './styles.css';
+import TestInput from "./Components/Dropdown/TestInput";
 
 function App() {
   const options = [
@@ -28,6 +29,7 @@ function App() {
           options={options}
           onChange={(value) => console.log(value)}
       />
+      <TestInput />
     </div>
   );
 }
