@@ -7,6 +7,7 @@ import DropDown2 from "./Components/Dropdown/DropDown2";
 import './styles.css';
 import TestInput from "./Components/Dropdown/TestInput";
 import DropDown3 from "./Components/Dropdown/DropDown3";
+import Random from "./Components/Random/Random";
 
 function App() {
   const options = [
@@ -31,7 +32,8 @@ function App() {
       {/*    onChange={(value) => console.log(value)}*/}
       {/*/>*/}
       {/*<TestInput />*/}
-      <DropDown3 />
+      {/*<DropDown3 />*/}
+      <Random />
     </div>
   );
 }
