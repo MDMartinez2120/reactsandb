@@ -8,6 +8,7 @@ import './styles.css';
 import TestInput from "./Components/Dropdown/TestInput";
 import DropDown3 from "./Components/Dropdown/DropDown3";
 import Random from "./Components/Random/Random";
+import Dropdown4 from "./Components/Dropdown/Dropdown4";
 
 function App() {
   const options = [
@@ -33,7 +34,8 @@ function App() {
       {/*/>*/}
       {/*<TestInput />*/}
       {/*<DropDown3 />*/}
-      <Random />
+      {/*<Random />*/}
+      <Dropdown4 />
     </div>
   );
 }
