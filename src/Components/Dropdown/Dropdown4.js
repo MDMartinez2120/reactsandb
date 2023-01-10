@@ -13,16 +13,16 @@ const Dropdown4 = () => {
 
     const handleOnHover = (result) => {
         // the item hovered
-        console.log(result)
+        // console.log(result)
     }
 
     const handleOnSelect = (item) => {
         // the item selected
-        console.log(item)
+        // console.log(item)
     }
 
     const handleOnFocus = () => {
-        console.log('Focused')
+        // console.log('Focused')
     }
 
     const formatResult = (item) => {
@@ -42,12 +42,14 @@ const Dropdown4 = () => {
                 <div style={{ width: 400 }}>
                     <ReactSearchAutocomplete
                         items={Users}
+                        placeholder={'search'}
                         fuseOptions={{ keys: ["first_name", "last_name"] }}
                         onSearch={handleOnSearch}
                         onHover={handleOnHover}
                         onSelect={handleOnSelect}
                         onFocus={handleOnFocus}
                         autoFocus
+                        maxResults={1}
                         formatResult={formatResult}
                     />
                 </div>
@@ -57,3 +59,5 @@ const Dropdown4 = () => {
 }
 
 export default Dropdown4;
+//component resource
+// https://www.npmjs.com/package/react-search-autocomplete
